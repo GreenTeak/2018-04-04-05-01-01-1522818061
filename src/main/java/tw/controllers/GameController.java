@@ -36,5 +36,4 @@ public class GameController {
             gameView.showGameStatus(game.checkStatus());
         }
     }
-
 }

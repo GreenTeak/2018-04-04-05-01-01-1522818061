@@ -46,7 +46,7 @@ public class AnswerTest {
         answer.validate();
     }
     @Test
-    public void test_should_return_an_OutOfRangeAnswerException_when_give_digit_without_trim() throws OutOfRangeAnswerException {
+    public void testnot_between_0_to_9() throws OutOfRangeAnswerException {
         String input = "12 3 4";
         Answer answer = Answer.createAnswer(input);
         expectedException.expect(OutOfRangeAnswerException.class);
