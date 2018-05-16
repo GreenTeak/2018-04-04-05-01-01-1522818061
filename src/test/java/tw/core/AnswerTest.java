@@ -1,11 +1,11 @@
 package tw.core;
 
-import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import tw.core.exception.OutOfRangeAnswerException;
 import tw.core.model.Record;
+
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -13,7 +13,6 @@ import java.util.List;
 
 import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertTrue;
-import static net.bytebuddy.matcher.ElementMatchers.is;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -67,11 +66,10 @@ public class AnswerTest {
         String testinput="1 5 4 3";
         Answer testanswer=Answer.createAnswer(testinput);
 
-        Record record=new Record();
-
-
-        System.out.print(answer.check(testanswer).getValue());
-        //assertEquals(answer.check(testanswer).getValue().toString(),result);
-
+        List<Integer>list= Arrays.asList(new Integer(1),new Integer(2));
+        int[] result=answer.check(testanswer).getValue();
+        List<Integer>resultlist=new ArrayList<>();
+        for(int i=0;i<result.length;i++)resultlist.add(result[i]);
+        assertEquals(resultlist,list);
     }
 }
